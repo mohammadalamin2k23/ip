@@ -1,0 +1,34 @@
+<div class="container">
+<button type="button" class="btn btn-primary btn-sm ipinfo">Jquery Get</button>
+<div class="result"></div>
+</div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script >$(document).ready(function(){
+$('.ipinfo').click(function(){
+$.ajax({
+type:"GET",
+url:"https://ipinfo.io/json",
+dataType:"json",
+success: function(data) {
+$('.result').append('<ul class="list-group"><li class="list-group-item">'+data.ip+'</li><li class="list-group-item">'+data.hostname+'</li><li class="list-group-item">'+data.city+'</li><li class="list-group-item">'+data.region+'</li><li class="list-group-item">'+data.country+'</li><li class="list-group-item">'+data.org+'</li></ul>');
+}
+});
+});
+  });</script>
+<pre>
+<div id="share-buttons">
+        <button class="share-button facebook" onclick="shareToFacebook()">Share on Facebook</button>
+        <button class="share-button twitter" onclick="shareToTwitter()">Share on Twitter</button>
+        <button class="share-button pinterest" onclick="shareToPinterest()">Share on Pinterest</button>
+        <button class="share-button copy" onclick="copyURL()">Copy URL</button>
+      
+    </div>
+    </pre>
+<style>.container{
+padding-top:5px;
+}
+.result{
+padding-top:5px;
+}
+ul{
+padding-bottom:5px;
+}
+</style>
